@@ -1,35 +1,89 @@
+#fancy{
+	border-radius:0.3em;
+	display: block;
+	margin: 1em auto;
+	padding: 0.3em;
+	width: 30%
+}
 .caja{
-     
-	border:solid;
-	box-shadow: 0 0 0.5em #000;
 	display:flex;
 	height:400px;
 	justify-content:space-around;
-    align-items: center;
+    align-items:center;
+    box-shadow: 0 0 0.5em #blue;
+    margin:0 auto;
+    width:80%;  
 }
 .caja div{
-height: 250px;
-width: 25%;
+	height: 250px;
+	width: 25%;
 }
 .cajitas1{
 	background:lightgreen;
 }
-
 .cajitas2{
-     align-self: flex-end;
+    align-self: flex-end;
 	background:lightblue;
-
-
 }
 .cajitas3{
 	background:salmon;
-
-	
-	
 }
-
 .cajitas3 img{
-max-width: 100%;
-max-height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+@media print{
+	.caja{
+		box-shadow: none;
+	}
+	#fancy, .cajitas1, .cajitas2{
+		display: none;
+	}
+	.caja .cajitas3{
+	width: 80%;
+}
+	}
+	@keyframes zapatos{
+	0%{
+		background: tomato;
+	}
+	20%{
+		background: gold;
+	}
+	60%{
+		background: lightpink;
+		border-radius: 50%;
+		transform:rotate(45deg);
+	}
+	80%{
+		background: darkblue;
+	}
+	100%{
+		background: chocolate;
+	}
+}
+@media screen and (max-width:600px){
+	#fancy{width:100%}
+
+	.caja{
+		flex-direction: column-reverse;
+		height: auto;
+		width: 100%;
 
 }
+
+	.caja div{
+		width: 100%;
+
+	}
+	
+	.caja .caajitas2{
+		animation:zapatos infinite 5s alternate;
+	
+
+	}
+	
+	
+}
+
